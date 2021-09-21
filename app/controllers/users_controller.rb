@@ -75,4 +75,3 @@ class UsersController < ApplicationController
     redirect_to(home_url)
   end
 end
-
