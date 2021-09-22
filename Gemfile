@@ -37,6 +37,9 @@ group :development, :test do
 end
 gem "will_paginate", git: "https://github.com/mislav/will_paginate.git", branch: "master"
 gem "bootstrap-will_paginate", "1.0.0"
+gem "image_processing", "1.9.3"
+gem "mini_magick", "4.9.5"
+gem "active_storage_validations", "0.8.2"
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -48,6 +51,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem "faker", "2.1.2"
+  gem "ffaker"
 end
 
 group :test do

@@ -13,13 +13,6 @@ User.create!(name:  "Example User",
              password_confirmation: "foobar",
              admin: true, activated_at: Time.zone.now)
 
-User.create!(name: "Example User",
-             email:"mailtommrr@gmail.com",
-             password:              "111111",
-             password_confirmation: "111111",
-             admin: true)
-
-
 30.times do |n|
   name  = "Name #{n}"
   email = "example-#{n+1}@railstutorial.org"
@@ -29,4 +22,10 @@ User.create!(name: "Example User",
                password:              password,
                password_confirmation: password,
                activated_at: Time.zone.now)
+end
+
+users = User.order(:created_at).take(6)
+  30.times do
+    content = FFaker::Lorem.sentence(word_count=3)
+    users.each { |user| user.microposts.create!(content: content) }
 end
